@@ -43,28 +43,23 @@ public class Solution {
     */
    
     public double adjustDigits(double userDouble) {
-        double hundredsPlace = (int)(userDouble/100);
+        // double hundredsPlace = (int)(userDouble/100);
         double tensPlace = (int)(userDouble%100/10);
         double onesPlace = (int)(userDouble%10);
         double tenthPlace = (int)(userDouble*10%10);
         double hunderedthPlace = (int)(userDouble*100%10);
-        hundredsPlace = (hundredsPlace + 1)%10;
+        // hundredsPlace = (hundredsPlace + 1)%10;
         tensPlace = (tensPlace+1)%10;
         onesPlace = (onesPlace+1)%10;
         tenthPlace = (tenthPlace+1)%10;
         hunderedthPlace = (hunderedthPlace+1)%10;
-        // System.out.println(hundredsPlace);
-        // System.out.println(tensPlace);
-        // System.out.println(onesPlace);
-        // System.out.println(tenthPlace);
-        // System.out.println(hunderedthPlace);
         double newValue = (tensPlace * 10)+onesPlace+(tenthPlace*0.1)+(hunderedthPlace*0.01);   
         return newValue;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.adjustDigits(900.12));
+        System.out.println(s.adjustDigits(199.12));
         //232.32
     }
 
