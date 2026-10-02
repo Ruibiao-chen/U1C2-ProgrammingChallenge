@@ -53,14 +53,15 @@ public class Solution {
         onesPlace = (onesPlace+1)%10;
         tenthPlace = (tenthPlace+1)%10;
         hunderedthPlace = (hunderedthPlace+1)%10;
-        double newValue = (tensPlace * 10)+onesPlace+(tenthPlace*0.1)+(hunderedthPlace*0.01);   
+        double newValue = (tensPlace * 10)+onesPlace+(tenthPlace*0.1)+(hunderedthPlace*0.01);
+        // double newValue = (hundredsPlace*100)+(tensPlace * 10)+onesPlace+(tenthPlace*0.1)+(hunderedthPlace*0.01);      
         return newValue;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.adjustDigits(199.12));
-        //232.32
+        System.out.println(s.adjustDigits(232.92));
+        //343.03
     }
 
 }
