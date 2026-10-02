@@ -8,18 +8,20 @@ public class Solution {
      */
 
     public double average(double t1, double t2, double t3, double t4) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        double average = (t1+t2+t3+t4)/4;
+        return average;
     }
 
     public int roundAverage(double average) {
-        // remove 0 and return your answer
-        return 0;
+        return (int)(average+0.5);
     }
 
     public boolean isPassing(int roundedAverage) {
-        // remove false and return your answer
-        return false;
+        if (roundedAverage >= 65) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /*
@@ -27,14 +29,13 @@ public class Solution {
     */
 
     public double totalStock(int shares, double price) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        return shares * price;
     }
 
 
     public int roundValueChange(double totalStock) {
-        // remove 0 and return your answer
-        return 0;
+        int roundedValue = (int)Math.round(totalStock);
+        return roundedValue;
     }
 
     /*
@@ -42,14 +43,29 @@ public class Solution {
     */
    
     public double adjustDigits(double userDouble) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        double hundredsPlace = (int)(userDouble/100);
+        double tensPlace = (int)(userDouble%100/10);
+        double onesPlace = (int)(userDouble%10);
+        double tenthPlace = (int)(userDouble*10%10);
+        double hunderedthPlace = (int)(userDouble*100%10);
+        hundredsPlace = (hundredsPlace + 1)%10;
+        tensPlace = (tensPlace+1)%10;
+        onesPlace = (onesPlace+1)%10;
+        tenthPlace = (tenthPlace+1)%10;
+        hunderedthPlace = (hunderedthPlace+1)%10;
+        // System.out.println(hundredsPlace);
+        // System.out.println(tensPlace);
+        // System.out.println(onesPlace);
+        // System.out.println(tenthPlace);
+        // System.out.println(hunderedthPlace);
+        double newValue = (tensPlace * 10)+onesPlace+(tenthPlace*0.1)+(hunderedthPlace*0.01);   
+        return newValue;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.adjustDigits(12.90));
-        //23.01
+        System.out.println(s.adjustDigits(900.12));
+        //232.32
     }
 
 }
